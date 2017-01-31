@@ -7,10 +7,6 @@ describe('app.component', () => {
         expect(appComponent).toBeDefined();
     });
 
-    it('should also fail', () => {
-        expect(false).toBe(true);
-    });
-
     it('should run async', async(() => {
         expect(true).toBe(true);
     }))

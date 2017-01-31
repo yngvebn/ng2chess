@@ -42,7 +42,6 @@ module.exports = function () {
     setup: function () {
       window.__moduleBundler.loadTests();
     },
-
     debug: true
   };
 };

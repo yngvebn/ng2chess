@@ -37,14 +37,12 @@ module.exports = {
                     loader: 'html-loader'
                 }]
             },
-            { 
-              test: /\.scss$/, 
-             loader: [ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: ['css-loader'] }),
-                    'to-string-loader',
-                    'css-loader',
-                    'sass-loader'
-                ],
-            }
+            {
+                test: /\.scss$/,
+                exclude: helpers.root('src', 'app'),
+                loader: ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: ['css-loader', 'postcss-loader', 'sass-loader'] })
+            },
+            { test: /\.scss$/, exclude: helpers.root('src', 'style'), loader: 'raw-loader!postcss-loader!sass-loader' }
         ]
     },
     output: {
